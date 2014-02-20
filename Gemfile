@@ -30,6 +30,8 @@ group :doc do
 end
 
 group :test, :development do
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
   gem 'rspec'
   gem 'rspec-rails'
 end
