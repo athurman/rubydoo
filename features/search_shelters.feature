@@ -1,3 +1,4 @@
+@wip
 Feature: Search for Shelters
   In order to adopt a dog
   As a person in a certain area
