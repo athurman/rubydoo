@@ -1,0 +1,46 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600);
+
+body {
+  background: #404040;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #DEDEDE;
+  font-weight: 300;
+}
+
+#logo {
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 55px;
+}
+
+#doo {
+  font-weight: 200;
+  color: #BDDBD8;
+}
+
+.home-buttons {
+  margin-top: 300px;
+}
+
+.home-page {
+  a.button {
+    width: 100%
+  }
+}
+
+#search-shelter {
+  background: #1E697F;
+}
+
+#find-breed {
+  background: #A4C9BB;
+}
