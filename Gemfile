@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-gem 'foundation-rails'
+gem 'zurb-foundation', '~> 4.3.1'
 gem 'haml-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
@@ -26,6 +26,8 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'selenium-webdriver'
+  gem 'launchy'
 end
 
 group :test do

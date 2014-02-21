@@ -13,3 +13,11 @@ end
 When(/^I fill in "(.*?)" with "(.*?)"$/) do |field, content|
   fill_in(field, with: content)
 end
+
+When(/^I follow "(.*?)"$/) do |text|
+  click_link(text)
+end
+
+Then(/^show me the page$/) do
+  save_and_open_page
+end

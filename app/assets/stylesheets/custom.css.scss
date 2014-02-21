@@ -4,15 +4,30 @@ body {
   background: #404040;
 }
 
+// Theme colors:
+$brand-color: #3b5998;
+$text-color: #DEDEDE;
+$teal-btn: #1E697F;
+$light-green-btn: #A4C9BB;
+
 .container {
   width: 100%;
   margin: 0 auto;
 }
 
-h1, h2, h3, h4, h5, h6, p{
+h1, h2, h3, h4, h5, h6, p, a{
   font-family: 'Source Sans Pro', sans-serif;
   color: #DEDEDE;
   font-weight: 300;
+}
+
+.button{
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: background-color 300ms ease-out;
+  -moz-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
 }
 
 #logo {
@@ -38,9 +53,22 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 #search-shelter {
-  background: #1E697F;
+  background-color: $teal-btn;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  &:hover {
+    background-color: darken( $teal-btn, 3% );
+  }
 }
 
 #find-breed {
-  background: #A4C9BB;
+  background-color: $light-green-btn;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  &:hover {
+    background-color: darken( $light-green-btn, 3% );
+  }
 }
+
+
+
