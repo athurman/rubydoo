@@ -17,3 +17,36 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+$(document).ready(initialize);
+
+function initialize(){
+  $('#submit-zipcode').click(clickValidateZip);
+}
+
+function clickValidateZip() {
+  var zipCode = getValue('#zip');
+
+  if (zipCode == null || zipCode == "") {
+    alert("Zip code must be filled out.");
+    return false;
+  } else if (zipCode.length < 5 || zipCode.length >5) {
+    alert("Zip code must be 5 digits.");
+    return false;
+  }
+}
+
+// --------------------------------------------- //
+// --------------------------------------------- //
+// --------------------------------------------- //
+
+function getValue(selector, fn){
+  var value = $(selector).val();
+  $(selector).val('');
+
+  if(fn){
+    value = fn(value);
+  }
+
+  return value;
+}

@@ -5,6 +5,8 @@ Rubydoo::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'static_pages#home'
   get 'static_pages/form' => 'static_pages#form'
+  get 'shelters/find' => 'shelters#find'
+  post 'shelters/find' => 'shelters#find'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

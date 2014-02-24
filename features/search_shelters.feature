@@ -9,7 +9,7 @@ Feature: Search for Shelters
     Then I should see "rubydoo"
     When I follow "Search Shelters"
     Then I should see "Please Enter Zipcode"
-    When I fill in "Please Enter Zipcode" with "asdfgh"
+    When I fill in "zipCode" with "asdfgh"
     Then I should see "Invalid Zipcode, please try again"
 
   Scenario: Inputting random text for zipcode fails
@@ -17,5 +17,5 @@ Feature: Search for Shelters
     Then I should see "rubydoo"
     When I follow "Search Shelters"
     Then I should see "Please Enter Zipcode"
-    When I fill in "Please Enter Zipcode" with "37207"
+    When I fill in "zipCode" with "37207"
     Then I should see "Shelters in Your Area:"
