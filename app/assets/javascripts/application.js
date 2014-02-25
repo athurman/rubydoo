@@ -22,6 +22,7 @@ $(document).ready(initialize);
 
 function initialize(){
   $('#submit-zipcode').click(clickValidateZip);
+  initMap(36, -86, 5);
 }
 
 function clickValidateZip() {
@@ -35,6 +36,11 @@ function clickValidateZip() {
     return false;
   }
 }
+
+// function initMap(lat, lng, zoom){
+//   var mapOptions = {center: new google.maps.LatLng(lat, lng), zoom: zoom, mapTypeId: google.maps.MapTypeId.ROADMAP};
+//   db.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+// }
 
 // --------------------------------------------- //
 // --------------------------------------------- //
