@@ -1,0 +1,8 @@
+.row
+  .small-12.columns
+    %h1 Shelters in Your Area:
+.row
+  .small-12.columns
+    %ul.shelters
+      - @shelters.each do |shelter|
+        %li= shelter.zip

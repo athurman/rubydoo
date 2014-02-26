@@ -1,6 +1,11 @@
 class SheltersController < ApplicationController
   def index
-    @shelters = Shelter.search(params[:search])
+    if params[:search] =~ /\d{5}/
+      @shelters = Shelter.search(params[:search])
+    else
+      flash[:alert] = "Invalid Zipcode, please try again"
+      render static_pages_form_path
+    end
   end
 
   def new
