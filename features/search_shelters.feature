@@ -13,7 +13,7 @@ Feature: Search for Shelters
     And I press "Search Shelters"
     Then I should see "Invalid Zipcode, please try again"
 
-  Scenario: Inputting random text for zipcode fails
+  Scenario: Inputting zipcode prints shelters
     When I go to the homepage
     Then I should see "rubydoo"
     When I follow "Search Shelters"
@@ -21,3 +21,5 @@ Feature: Search for Shelters
     When I fill in "search" with "37207"
     And I press "Search Shelters"
     Then I should see "Shelters in Your Area:"
+    Then show me the page
+    And I should see "Noahs Ark Animal Hospital Rescues" within the shelters feed
