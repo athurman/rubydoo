@@ -15,6 +15,10 @@ $light-green-btn: #A4C9BB;
   margin: 0 auto;
 }
 
+.clearfix {
+  clear: both;
+}
+
 h1, h2, h3, h4, h5, h6, p, a{
   font-family: 'Source Sans Pro', sans-serif;
   color: #DEDEDE;
@@ -30,16 +34,30 @@ h1, h2, h3, h4, h5, h6, p, a{
   transition: background-color 300ms ease-out;
 }
 
+#rubydoo {
+  float: left;
+  height: 75px;
+}
+
 #logo {
-  text-align: center;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
   font-size: 55px;
+  float: left;
+  position: relative;
+  top: 5px;
 }
 
 #doo {
   font-weight: 200;
   color: #BDDBD8;
+}
+
+#logo-container {
+  display: block;
+  width: 254px;
+  margin: 0 auto;
+  margin-top: 25px;
 }
 
 .home-buttons {
