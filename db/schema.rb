@@ -11,9 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140227164908) do
+ActiveRecord::Schema.define(version: 20140227170156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "shelters", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.string   "petfinder_id"
+    t.string   "zip"
+    t.string   "state"
+    t.string   "city"
+    t.string   "address"
+    t.string   "email"
+    t.float    "latitude"
+    t.float    "longitude"
+  end
 
 end
