@@ -3,31 +3,42 @@
 
 = render partial: "shared/nav"
 .container.shelter-index
-  .row
-    .small-12.columns
-      %h1 Shelters in Your Area:
-  .row
-    .small-12.columns
-      .map-container
-        #map{style: "width: 100%; height: 400px;"}
-        - content_for :scripts do
-          :javascript
-            handler = Gmaps.build('Google');
-            handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-              markers = handler.addMarkers(#{raw @hash.to_json});
-              handler.bounds.extendWith(markers);
-              handler.fitMapToBounds();
-            });
+  - if @shelters.length >= 1
+    .row
+      .small-12.columns
+        %h1 Shelters in Your Area:
+    .row
+      .small-12.columns
+        .map-container
+          #map{style: "width: 100%; height: 400px;"}
+          - content_for :scripts do
+            :javascript
+              handler = Gmaps.build('Google');
+              handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+                markers = handler.addMarkers(#{raw @hash.to_json});
+                handler.bounds.extendWith(markers);
+                handler.fitMapToBounds();
+              });
 
-  .row
-    .small-12.columns
-      .shelters
-        - @shelters.each do |shelter|
-          .shelter
-            %h5= shelter.name
-            %p= shelter.address
-            %p= "#{shelter.city}, #{shelter.state} #{shelter.zip}"
-            %p
-              contact information:
-              = mail_to shelter.email
-            %hr
+    .row
+      .small-12.columns
+        .shelters
+          - @shelters.each do |shelter|
+            .shelter
+              %h5= shelter.name
+              %p= shelter.address
+              %p= "#{shelter.city}, #{shelter.state} #{shelter.zip}"
+              %p
+                contact information:
+                = mail_to shelter.email
+              %hr
+  - else
+    .row
+      .small-12.columns
+        %h1 We're sorry, we were not able to find any shelters.
+    .row
+      .small-12.columns
+        %h6 Please check and make sure you input the correct zip code.
+    .row
+      .small-12.columns
+        %img.oops(src="/images/ruby_oops.JPG")
