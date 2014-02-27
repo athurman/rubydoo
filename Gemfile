@@ -1,15 +1,13 @@
 source 'https://rubygems.org'
 
 gem 'activerecord'
-# Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 gem 'figaro'
 gem 'zurb-foundation', '~> 4.3.1'
+gem 'gmaps4rails'
 gem 'haml-rails'
 gem 'httparty'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'json'
 gem 'pg'
@@ -19,6 +17,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+gem 'underscore-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

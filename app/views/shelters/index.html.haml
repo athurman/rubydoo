@@ -1,14 +1,35 @@
+%script{src: "//maps.google.com/maps/api/js?v=3.13&sensor=false&libraries=geometry", type: "text/javascript"}
+%script{src: "//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js", type: "text/javascript"}
+
 = render partial: "shared/nav"
-.row
-  .small-12.columns
-    %h1 Shelters in Your Area:
-.row
-  .small-6.offset-small-3.columns
-    .shelters
-      - @shelters.each do |shelter|
-        .shelter
-          %h5= shelter.name
-          %p= shelter.address
-          %p= shelter.city
-          %p= shelter.state
-          %p= shelter.zip
+.container.shelter-index
+  .row
+    .small-12.columns
+      %h1 Shelters in Your Area:
+  .row
+    .small-12.columns
+      .map-container
+        #map{style: "width: 100%; height: 400px;"}
+        - content_for :scripts do
+          :javascript
+            handler = Gmaps.build('Google');
+            handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+              markers = handler.addMarkers(#{raw @hash.to_json});
+              handler.bounds.extendWith(markers);
+              handler.fitMapToBounds();
+            });
+
+  .row
+    .small-12.columns
+      .shelters
+        - @shelters.each do |shelter|
+          .shelter
+            %h5= shelter.name
+            %p= shelter.address
+            %p= "#{shelter.city}, #{shelter.state} #{shelter.zip}"
+            %p
+              contact information:
+              = mail_to shelter.email
+            %p= shelter.latitude
+            %p= shelter.longitude
+            %hr
