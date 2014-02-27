@@ -1,8 +1,14 @@
+= render partial: "shared/nav"
 .row
   .small-12.columns
     %h1 Shelters in Your Area:
 .row
-  .small-12.columns
-    %ul.shelters
+  .small-6.offset-small-3.columns
+    .shelters
       - @shelters.each do |shelter|
-        %li= shelter.name
+        .shelter
+          %h5= shelter.name
+          %p= shelter.address
+          %p= shelter.city
+          %p= shelter.state
+          %p= shelter.zip

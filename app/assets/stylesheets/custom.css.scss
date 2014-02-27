@@ -39,13 +39,26 @@ h1, h2, h3, h4, h5, h6, p, a{
   height: 75px;
 }
 
-#logo {
+.dog {
+  float: left;
+  height: 30px;
+  position: relative;
+  top: 2px;
+}
+
+.logo {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
   font-size: 55px;
   float: left;
   position: relative;
   top: 4px;
+}
+
+.top-bar {
+  .logo {
+    font-size: 22px;
+  }
 }
 
 #doo {
@@ -92,5 +105,18 @@ h1, h2, h3, h4, h5, h6, p, a{
   text-align: center;
 }
 
+// Foundation Navigation Styling
 
+.top-bar, .contain-to-grid, .top-bar-section li a:not(.button) {
+  background: #242424;
+}
+
+.top-bar .name h1 a {
+  font-weight: normal;
+}
+
+.top-bar-section ul li > a {
+  font-weight: normal;
+  font-size: 1em;
+}
 
