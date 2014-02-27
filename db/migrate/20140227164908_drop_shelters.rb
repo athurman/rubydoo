@@ -1,5 +1,5 @@
 class DropShelters < ActiveRecord::Migration
-  def up
+    def up
     drop_table :shelters
   end
 
