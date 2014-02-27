@@ -21,7 +21,6 @@ class PetFinder
     response = HTTParty.get(BASE_URL + 'shelter.find?key=' + ENV['PETFINDER_API_KEY'] + '&location=' + zip + '&format=json&token=' + token + '&sig=' + secret)
     parsed = JSON.parse(response.body)
     parsed["petfinder"]["shelters"]["shelter"].each do |shelter_obj|
-      longitude = shelter_obj["longitude"]["$t"]
       name =  shelter_obj["name"]["$t"]
       name.each_char do |char|
         if char == "'"
@@ -32,10 +31,9 @@ class PetFinder
       email = shelter_obj["email"]["$t"]
       city = shelter_obj["city"]["$t"]
       api_zip =  shelter_obj["zip"]["$t"]
-      latitude = shelter_obj["latitude"]["$t"]
       petfinder_id =  shelter_obj["id"]["$t"]
       address = shelter_obj["address1"]["$t"]
-      shelter = Shelter.create(name: name, petfinder_id: petfinder_id, longitude: longitude, latitude: latitude, zip: api_zip, state: state, city: city, address: address, email: email)
+      shelter = Shelter.create(name: name, petfinder_id: petfinder_id, zip: api_zip, state: state, city: city, address: address, email: email)
     end
   end
 end

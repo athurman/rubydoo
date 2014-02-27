@@ -7,11 +7,10 @@ class SheltersController < ApplicationController
       if @shelters.blank?
         PetFinder.retrieve_shelters(params[:search])
         @shelters = Shelter.search(params[:search])
-
-        @hash = Gmaps4rails.build_markers(@shelters) do |shelter, marker|
-          marker.lat shelter.latitude
-          marker.lng shelter.longitude
-        end
+      end
+      @hash = Gmaps4rails.build_markers(@shelters) do |shelter, marker|
+        marker.lat shelter.latitude
+        marker.lng shelter.longitude
       end
     else
       flash[:alert] = "Invalid Zipcode, please try again"
@@ -23,5 +22,10 @@ class SheltersController < ApplicationController
   end
 
   def create
+  end
+
+  private
+  def shelter_params
+    params.require(:shelter).permit(:name).permit(:address).permit(:city).permit(:state).permit(:zip)
   end
 end
