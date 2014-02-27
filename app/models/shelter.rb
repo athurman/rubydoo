@@ -9,7 +9,7 @@ class Shelter < ActiveRecord::Base
 
   def full_address
     unless address.nil?
-      full_address = "#{name}, #{address}, #{city}, #{state}, #{zip}"
+      full_address = "#{address}, #{city}, #{state}, #{zip}"
     else
       full_address = "#{name}, #{city}, #{state}, #{zip}"
     end

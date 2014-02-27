@@ -139,6 +139,10 @@ h1, h2, h3, h4, h5, h6, p, a{
 
 // Foundation Navigation Styling
 
+.top-bar {
+  height: 48px;
+}
+
 .top-bar, .contain-to-grid, .top-bar-section li a:not(.button), .reveal-modal {
   background: #242424;
 }
