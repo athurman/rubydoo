@@ -1,4 +1,5 @@
 require "petfinder.rb"
+require "json_parser.rb"
 
 class SheltersController < ApplicationController
   def index
