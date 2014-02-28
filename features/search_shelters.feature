@@ -1,4 +1,4 @@
-@wip
+
 Feature: Search for Shelters
   In order to adopt a dog
   As a person in a certain area
@@ -18,7 +18,7 @@ Feature: Search for Shelters
     Then I should see "rubydoo"
     When I follow "Search Shelters"
     Then I should see "Please Enter Zipcode"
-    When I fill in "search" with "37207"
+    When I fill in "search" with "37027"
     And I press "Search Shelters"
     Then I should see "Shelters in Your Area:"
     Then show me the page

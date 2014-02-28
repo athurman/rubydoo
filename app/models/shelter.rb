@@ -3,7 +3,7 @@ class Shelter < ActiveRecord::Base
   geocoded_by :full_address
   after_validation :geocode
 
-  def self.search zip_code
+  def self.search(zip_code)
     Shelter.where(zip: zip_code)
   end
 
