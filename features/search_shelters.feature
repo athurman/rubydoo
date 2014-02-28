@@ -21,5 +21,4 @@ Feature: Search for Shelters
     When I fill in "search" with "37027"
     And I press "Search Shelters"
     Then I should see "Shelters in Your Area:"
-    Then show me the page
     And I should see "Noahs Ark Animal Hospital Rescues" within the shelters feed
