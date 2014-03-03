@@ -5,6 +5,7 @@ Rubydoo::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'static_pages#home'
   get 'static_pages/shelter_form' => 'static_pages#shelter_form'
+  get 'breeds/find' => 'breeds#find'
   resources :shelters, only: [:index, :new, :create, :show]
   resources :breeds, only: [:index, :show]
 

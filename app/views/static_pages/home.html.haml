@@ -15,5 +15,5 @@
     .small-6.large-3.columns
       = link_to "Search Shelters", static_pages_shelter_form_path, data: {:'reveal-id' => "zipcodeModal", :'reveal-ajax' => 'true'}, id: "search-shelter", class: "button"
     .small-6.large-offset-6.large-3.columns
-      %a#find-breed.button Find Your Breed
+      = link_to "Find Your Breed", breeds_find_path, id: "find-breed", class: "button"
   %div#zipcodeModal.reveal-modal.small

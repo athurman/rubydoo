@@ -21,3 +21,26 @@
 
 $(function(){ $(document).foundation(); });
 $(function(){ $(document).foundation(); });
+
+$(document).ready(init);
+
+function init(){
+  $(document).foundation();
+  $('.next-step').click(clickNextStep);
+}
+
+function clickNextStep(e) {
+  e.preventDefault();
+  if (this.parentElement.id == "question-6"){
+    $('#submit-search-breed').show();
+  }
+  $('section').hide();
+  if (this.parentElement.id){
+    var num = parseInt(this.parentElement.id.substring(9));
+    num += 1
+    var id = this.parentElement.id.substring(0,9) + num;
+    $('#' + id).show();
+  }else{
+    $('#question-1').show();
+  }
+}
