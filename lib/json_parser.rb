@@ -16,4 +16,12 @@ class JsonParser
     end
   end
 
+  def self.parse_answer_values
+    answers_file = File.read("./data/answers.json")
+    answers = JSON.parse(answers_file)
+    answers["answers"].each do |answer|
+      answer_value = Answer.create(answer_value: answer["answer_value"])
+    end
+  end
+
 end
