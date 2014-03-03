@@ -1,0 +1,108 @@
+= render partial: "shared/nav"
+.container.breeds-find
+  .row
+    .small-12.columns
+      = form_tag(breeds_path, :method => 'get') do
+        %section#question-1
+          %h3 What size dog are you interested in?
+          .row
+            = radio_button_tag(:size, "tiny")
+            = label_tag(:size_tiny, "#{@answers[0].answer_value}")
+          .row
+            = radio_button_tag(:size, "small")
+            = label_tag(:size_small, "#{@answers[1].answer_value}")
+          .row
+            = radio_button_tag(:size, "medium")
+            = label_tag(:size_medium, "#{@answers[2].answer_value}")
+          .row
+            = radio_button_tag(:size, "large")
+            = label_tag(:size_large, "#{@answers[3].answer_value}")
+          .row
+            = radio_button_tag(:size, "giant")
+            = label_tag(:size_giant, "#{@answers[4].answer_value}")
+          %button.button.next-step Next
+        %section#question-2.hidden
+          %h3 How energetic do you want your dog to be?
+          .row
+            = radio_button_tag(:energy, "high")
+            = label_tag(:energy_high, "#{@answers[5].answer_value}")
+          .row
+            = radio_button_tag(:energy, "daily")
+            = label_tag(:energy_daily, "#{@answers[6].answer_value}")
+          .row
+            = radio_button_tag(:energy, "inactive")
+            = label_tag(:energy_inactive, "#{@answers[7].answer_value}")
+          .row
+            = radio_button_tag(:energy, "null")
+            = label_tag(:energy_null, "#{@answers[8].answer_value}")
+          %button.button.next-step Next
+        %section#question-3.hidden
+          %h3 How often will you be able to play with your dog?
+          .row
+            = radio_button_tag(:time, "high")
+            = label_tag(:time_high, "#{@answers[9].answer_value}")
+          .row
+            = radio_button_tag(:time, "medium")
+            = label_tag(:time_medium, "#{@answers[10].answer_value}")
+          .row
+            = radio_button_tag(:time, "low")
+            = label_tag(:time_low, "#{@answers[11].answer_value}")
+          %button.button.next-step Next
+        %section#question-4.hidden
+          %h3 Do you have other pets?
+          .row
+            = radio_button_tag(:animal_friendly, "high")
+            = label_tag(:animal_friendly_high, "#{@answers[12].answer_value}")
+          .row
+            = radio_button_tag(:animal_friendly, "medium")
+            = label_tag(:animal_friendly_medium, "#{@answers[13].answer_value}")
+          .row
+            = radio_button_tag(:animal_friendly, "low")
+            = label_tag(:animal_friendly_low, "#{@answers[14].answer_value}")
+          %button.button.next-step Next
+        %section#question-5.hidden
+          %h3 What is the main reason you want a dog?
+          .row
+            = radio_button_tag(:role, "companion")
+            = label_tag(:role_companion, "#{@answers[15].answer_value}")
+          .row
+            = radio_button_tag(:role, "protection")
+            = label_tag(:role_protection, "#{@answers[16].answer_value}")
+          .row
+            = radio_button_tag(:role, "exercise")
+            = label_tag(:role_exercise, "#{@answers[17].answer_value}")
+          .row
+            = radio_button_tag(:role, "family")
+            = label_tag(:role_family, "#{@answers[18].answer_value}")
+          %button.button.next-step Next
+        %section#question-6.hidden
+          %h3 Your ideal grooming habits would include:
+          .row
+            = radio_button_tag(:grooming, "regular")
+            = label_tag(:grooming_regular, "#{@answers[19].answer_value}")
+          .row
+            = radio_button_tag(:grooming, "minimal")
+            = label_tag(:grooming_minimal, "#{@answers[20].answer_value}")
+          .row
+            = radio_button_tag(:grooming, "medium_maintenance")
+            = label_tag(:grooming_medium_maintenance, "#{@answers[21].answer_value}")
+          .row
+            = radio_button_tag(:grooming, "high_maintenance")
+            = label_tag(:grooming_high_maintenance, "#{@answers[22].answer_value}")
+          %button.button.next-step Next
+        %section#question-7.hidden
+          %h3 Which of the following best describes your living conditions?
+          .row
+            = radio_button_tag(:space, "large")
+            = label_tag(:space_large, "#{@answers[23].answer_value}")
+          .row
+            = radio_button_tag(:space, "small")
+            = label_tag(:space_small, "#{@answers[26].answer_value}")
+          .row
+            = radio_button_tag(:space, "none")
+            = label_tag(:space_none, "#{@answers[24].answer_value}")
+          .row
+            = radio_button_tag(:space, "medium")
+            = label_tag(:space_medium, "#{@answers[25].answer_value}")
+        %div#submit-search-breed.hidden
+          = submit_tag "Find Breeds", :class => "button", :id => "submit-breeds", :name => nil
