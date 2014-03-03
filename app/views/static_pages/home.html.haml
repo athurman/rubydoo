@@ -13,7 +13,7 @@
       %p.text-center Find the right dog for your lifestyle, then rescue it.
   .row.home-buttons
     .small-6.large-3.columns
-      = link_to "Search Shelters", static_pages_form_path, data: {:'reveal-id' => "zipcodeModal", :'reveal-ajax' => 'true'}, id: "search-shelter", class: "button"
+      = link_to "Search Shelters", static_pages_shelter_form_path, data: {:'reveal-id' => "zipcodeModal", :'reveal-ajax' => 'true'}, id: "search-shelter", class: "button"
     .small-6.large-offset-6.large-3.columns
       %a#find-breed.button Find Your Breed
   %div#zipcodeModal.reveal-modal.small
