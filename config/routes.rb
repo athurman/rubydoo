@@ -6,6 +6,7 @@ Rubydoo::Application.routes.draw do
   root 'static_pages#home'
   get 'static_pages/shelter_form' => 'static_pages#shelter_form'
   get 'breeds/find' => 'breeds#find'
+  get 'static_pages/about' => 'static_pages#about'
   resources :shelters, only: [:index, :new, :create, :show]
   resources :breeds, only: [:index, :show]
 

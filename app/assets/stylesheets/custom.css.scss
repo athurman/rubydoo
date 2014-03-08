@@ -5,6 +5,7 @@ body {
 }
 
 // Theme colors:
+$dark-grey: #404040;
 $brand-color: #3b5998;
 $text-color: #DEDEDE;
 $teal-btn: #1E697F;
@@ -220,4 +221,30 @@ h1, h2, h3, h4, h5, h6, p, a{
     background-color: darken( $light-green-btn, 4% );
   }
 }
+
+// About Page Styling
+
+#ruby_portrait {
+  width: 100%;
+}
+
+#about {
+  width: 100%;
+  background-color: $light-grey;
+  h3 {
+    margin:20px 5px;
+    text-align: center;
+    font-weight: 600;
+    color: $teal-btn;
+  }
+  p {
+    padding: 20px;
+    text-align: justify;
+  }
+}
+
+.about {
+  color: $dark-grey;
+}
+
 
