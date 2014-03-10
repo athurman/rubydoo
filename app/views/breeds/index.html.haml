@@ -1,2 +1,28 @@
-%h1.text-center Top 5 Breeds that Best Fit Your Lifestyle:
-= @top_five_breeds
+= render partial: "shared/nav"
+.container.breeds-index
+.row
+  .small-12.columns
+    %h1.text-center Top 5 Breeds that Best Fit Your Lifestyle:
+.row
+  .small-12.columns
+    .breeds
+      .rating.hidden= rating = 1
+      - @top_five_breeds.each do |breed|
+        .row
+          .large-3.small-12.columns
+            .breed-image
+          .large-9.small-12.columns
+            .breed
+              %h3= "#{rating}. #{breed.name}"
+              %p= "Group: #{breed.group}"
+              %p= "Size: #{breed.size}"
+              %p= "Weight: #{breed.weight}"
+              %p= "Height: #{breed.height}"
+              %p= "Lifespan: #{breed.lifespan}"
+              %p= "Primary Role: #{breed.role}"
+              %p Temperament:
+              %p.temperament= breed.temperament
+              .rating.hidden= rating +=1
+          .row
+            .small-12.columns
+              %hr

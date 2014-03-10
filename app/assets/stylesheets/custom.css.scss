@@ -247,4 +247,27 @@ h1, h2, h3, h4, h5, h6, p, a{
   color: $dark-grey;
 }
 
+// Find Your Breed Results
+.breeds {
+  .breed-image {
+    margin-top: 6px;
+    height: 250px;
+    width: 100%;
+    background: blue;
+  }
+  .breed {
+    h3, p {
+      padding-right: 40px;
+    }
+    h3 {
+      font-size: 1.8em;
+    }
+    p {
+      margin-bottom: 10px;
+      color: $ice-blue;
+      font-weight: 400;
+    }
+  }
+}
+
 
