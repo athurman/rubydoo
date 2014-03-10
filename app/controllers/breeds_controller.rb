@@ -11,8 +11,8 @@ class BreedsController < ApplicationController
       output[all_breeds[i].id] = score
       i += 1
     end
-
     output = output.sort_by {|k, v| v}.reverse
+
     j = 0
     5.times do
       id = output[j][0]
