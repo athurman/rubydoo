@@ -8,6 +8,12 @@ class BreedsController < ApplicationController
     params[:role]
     params[:grooming]
     params[:space]
+    # i = 0
+    # all_breeds = Breed.all
+    # all_breeds.each do
+    #   score = Breed.generate_score([], all_breeds[i].id)
+    # end
+    # output.sort_by {|k, v| v}.reverse
   end
 
   def find
