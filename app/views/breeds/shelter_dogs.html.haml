@@ -1,0 +1,10 @@
+= render partial: "shared/nav"
+.container.shelter-dog
+  .row
+    .small-12.columns
+      - if @shelterdogs.length >= 1
+        - @shelterdogs.each do |dog|
+          %h1= dog["name"]
+          %img.dog-image(src="#{dog["image"]}")
+      - else
+        %h3.text-center Sorry, no dogs of the breed you selected were located in shelters around your area.  Please try search another breed.
