@@ -1,0 +1,6 @@
+%h1 Please Enter Zipcode
+= form_tag(breeds_shelter_dogs_path, :method => 'get') do
+  = text_field_tag(:zipcode, params[:zipcode])
+  = hidden_field_tag(:breed, @breed_name)
+  = submit_tag "Search Shelter Dogs", :class => "button", :id => "submit-shelter-location", :name => nil
+%a.close-reveal-modal &#215;
