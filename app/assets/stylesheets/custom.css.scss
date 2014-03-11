@@ -189,11 +189,12 @@ h1, h2, h3, h4, h5, h6, p, a{
     color: $text-color;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
-    padding: 2px 0 14px 14px;
+    padding: 2px 0 14px 0;
     vertical-align: top;
   }
   input {
-    margin-left: 55px;
+    margin-left: 10px;
+    float: left;
   }
 }
 
@@ -267,7 +268,12 @@ h1, h2, h3, h4, h5, h6, p, a{
       color: $ice-blue;
       font-weight: 400;
     }
+    .search-breeds {
+      float: right;
+    }
   }
 }
 
-
+input[type="text"].hidden {
+  display: none;
+}
