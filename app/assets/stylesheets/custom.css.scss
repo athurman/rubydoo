@@ -200,10 +200,10 @@ h1, h2, h3, h4, h5, h6, p, a{
     display: inline-block;
     color: $text-color;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     padding: 2px 0 14px 0;
     vertical-align: top;
-    float: left;
+    float: right;
   }
 }
 
@@ -289,6 +289,7 @@ input[type="text"].hidden {
   .breeds-find {
     label {
       font-size: 20px;
+      float: left;
     }
   }
   .find-breeds-container {
