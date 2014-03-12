@@ -1,4 +1,5 @@
 class Shelter < ActiveRecord::Base
+  validates :petfinder_id, uniqueness: true
   default_scope { order("name ASC") }
   geocoded_by :full_address
   after_validation :geocode
@@ -15,18 +16,4 @@ class Shelter < ActiveRecord::Base
     end
     full_address
   end
-
-  def self.dedupe
-    # find all models and group them on keys which should be common
-    grouped = all.group_by{|shelter| [shelter.name, shelter.city, shelter.state] }
-    grouped.values.each do |duplicates|
-      # the first one we want to keep right?
-      first_one = duplicates.shift # or pop for last one
-      # if there are any more left, they are duplicates
-      # so delete all of them
-      duplicates.each{|double| double.destroy} # duplicates can now be destroyed
-    end
-  end
 end
-
-Shelter.dedupe
