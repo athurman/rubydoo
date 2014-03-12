@@ -12,13 +12,16 @@ class JsonParser
           name.delete!(char)
         end
       end
-      shelter = Shelter.create(name: name,
-                               petfinder_id: shelter_obj["id"]["$t"],
-                               zip: shelter_obj["zip"]["$t"],
-                               state: shelter_obj["state"]["$t"],
-                               city: shelter_obj["city"]["$t"],
-                               address: shelter_obj["address1"]["$t"],
-                               email: shelter_obj["email"]["$t"])
+      shelter = Shelter.new(name: name,
+                            petfinder_id: shelter_obj["id"]["$t"],
+                            zip: shelter_obj["zip"]["$t"],
+                            state: shelter_obj["state"]["$t"],
+                            city: shelter_obj["city"]["$t"],
+                            address: shelter_obj["address1"]["$t"],
+                            email: shelter_obj["email"]["$t"])
+      if shelter.valid?
+        shelter.save
+      end
     end
   end
 
@@ -67,7 +70,7 @@ class JsonParser
       shelter_dog["contact_phone"] = pet_obj["contact"]["phone"]["$t"] unless pet_obj["contact"]["phone"].nil?
 
       shelter_dog["description"] = pet_obj["description"]["$t"]
-      shelter_dog["image"] = pet_obj["media"]["photos"]["photo"][0]["$t"]
+      shelter_dog["image"] = pet_obj["media"]["photos"]["photo"].first["$t"] unless pet_obj["contact"]["phone"].nil?
       shelter_dog["breeds"] = []
       if pet_obj["breeds"]["breed"].is_a?(Array)
         pet_obj["breeds"]["breed"].each do |breed_hash|
