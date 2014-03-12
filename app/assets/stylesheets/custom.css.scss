@@ -218,7 +218,6 @@ h1, h2, h3, h4, h5, h6, p, a{
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  padding-left: 25px;
   section h3 {
     padding: 20px;
   }
@@ -284,4 +283,10 @@ h1, h2, h3, h4, h5, h6, p, a{
 
 input[type="text"].hidden {
   display: none;
+}
+
+@media all and (min-width: 768px){
+  .find-breeds-container {
+    padding-left: 50px;
+  }
 }
