@@ -203,9 +203,6 @@ h1, h2, h3, h4, h5, h6, p, a{
     font-size: 16px;
     padding: 2px 0 14px 0;
     vertical-align: top;
-  }
-  input {
-    margin-left: 10px;
     float: left;
   }
 }
@@ -221,14 +218,15 @@ h1, h2, h3, h4, h5, h6, p, a{
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
+  padding-left: 25px;
   section h3 {
-    padding: 20px 0;
+    padding: 20px;
   }
 }
 
 .next-step {
   background: $light-green-btn;
-  float: right;
+  float: left;
   margin: 20px 0 15px 0;
   &:hover {
     background-color: darken( $light-green-btn, 4% );
