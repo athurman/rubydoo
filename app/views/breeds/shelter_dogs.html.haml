@@ -4,7 +4,24 @@
     .small-12.columns
       - if @shelterdogs.length >= 1
         - @shelterdogs.each do |dog|
-          %h1= dog["name"]
-          %img.dog-image(src="#{dog["image"]}")
+          .row
+            .large-4.small-12.columns
+              %img.dog-image(src="#{dog["image"]}")
+              %p For more information please contact:
+              %p= dog["contact_name"]
+              %p= "Phone: #{dog["contact_phone"]}"
+              %p
+                Email:
+                = mail_to dog["email"]
+            .large-8.small-12.columns
+              .shelter-dog
+                %h5= "Name: #{dog["name"]}"
+                %p= "Age: #{dog["age"]}"
+                %p= "Sex: #{dog["sex"]}"
+                %p= "Breed(s): #{dog["breeds"].join(", ")}"
+                %p Description:
+                %p= dog["description"]
+                %p= "Location: #{dog["address"]} #{dog["city"]}, #{dog["state"]} #{dog["zipcode"]}"
+            %hr
       - else
         %h3.text-center Sorry, no dogs of the breed you selected were located in shelters around your area.  Please try search another breed.

@@ -285,8 +285,15 @@ h1, h2, h3, h4, h5, h6, p, a{
   }
 }
 
-input[type="text"].hidden {
-  display: none;
+// Shekter Dogs List View
+.dog-image {
+  width: 100%
+}
+
+.shelter-dog {
+  p {
+    margin-bottom: 8px;
+  }
 }
 
 @media all and (min-width: 768px){
