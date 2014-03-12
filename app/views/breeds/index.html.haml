@@ -10,7 +10,7 @@
         - @top_eight_breeds.each do |breed|
           .row
             .large-3.small-12.columns
-              .breed-image
+              %img.breed-image(src="/images/breeds/#{breed.image}")
             .large-9.small-12.columns
               .breed
                 %h3= "#{rating}. #{breed.name}"
