@@ -55,7 +55,6 @@ class JsonParser
   def self.parse_shelter_dogs(response)
     dogs = []
     parsed = JSON.parse(response.body)
-    puts parsed["petfinder"]["pets"]["pet"]
     parsed["petfinder"]["pets"]["pet"].each do |pet_obj|
       shelter_dog = {}
       shelter_dog["name"] = pet_obj["name"]["$t"]
@@ -70,7 +69,9 @@ class JsonParser
       shelter_dog["contact_phone"] = pet_obj["contact"]["phone"]["$t"] unless pet_obj["contact"]["phone"].nil?
 
       shelter_dog["description"] = pet_obj["description"]["$t"]
-      shelter_dog["image"] = pet_obj["media"]["photos"]["photo"].first["$t"] unless pet_obj["contact"]["phone"].nil?
+      unless pet_obj["media"]["photos"].nil?
+        shelter_dog["image"] = pet_obj["media"]["photos"]["photo"].first["$t"]
+      end
       shelter_dog["breeds"] = []
       if pet_obj["breeds"]["breed"].is_a?(Array)
         pet_obj["breeds"]["breed"].each do |breed_hash|
