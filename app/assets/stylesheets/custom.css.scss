@@ -180,6 +180,18 @@ h1, h2, h3, h4, h5, h6, p, a{
 
 // Find Your Breed Form Styling
 
+#progress-bar-container {
+  width: 100%;
+  height: 20px;
+  background-color: $dark-grey;
+  margin-top: 75px;
+  #progress {
+    height: 20px;
+    float: left;
+    background-color: $ice-blue;
+    width: 0%;
+  }
+}
 .breeds-find {
   background: url(/images/fetch.png) no-repeat;
   background-size: cover;
@@ -203,7 +215,7 @@ h1, h2, h3, h4, h5, h6, p, a{
   height: auto;
   width: 100%;
   margin: 0 auto;
-  margin-top: 75px;
+  margin-top: 15px;
   margin-bottom: 400px;
   background: rgba(0, 0, 0, 0.7);
   -webkit-border-radius: 4px;

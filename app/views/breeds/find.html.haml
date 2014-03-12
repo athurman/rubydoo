@@ -2,6 +2,10 @@
 .container.breeds-find
   .row
     .small-12.columns
+      #progress-bar-container
+        #progress
+  .row
+    .small-12.columns
       .find-breeds-container.small-12.columns
         = form_tag(breeds_path, :method => 'get') do
           %section#question-1

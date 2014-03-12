@@ -20,7 +20,6 @@
 
 
 $(function(){ $(document).foundation(); });
-$(function(){ $(document).foundation(); });
 
 $(document).ready(init);
 
@@ -37,10 +36,18 @@ function clickNextStep(e) {
   $('section').hide();
   if (this.parentElement.id){
     var num = parseInt(this.parentElement.id.substring(9));
+    var progressPercentage = (100 / 7) * num;
     num += 1
     var id = this.parentElement.id.substring(0,9) + num;
     $('#' + id).show();
   }else{
     $('#question-1').show();
   }
+  addToProgressBar(progressPercentage);
+}
+
+function addToProgressBar(percentage) {
+  var containerWidth = $('#progress-bar-container').css('width');
+  var width = (parseInt(containerWidth) / 100) * percentage;
+  $('#progress').animate({width: width}, 500);
 }
