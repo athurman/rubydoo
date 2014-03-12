@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+JsonParser.parse_breeds
+Importer.import(File.join(Rails.root, 'data', 'scores.csv'))
+JsonParser.parse_answer_values
