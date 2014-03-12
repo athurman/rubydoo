@@ -197,12 +197,12 @@ h1, h2, h3, h4, h5, h6, p, a{
   background-size: cover;
   background-color: #404040;
   label {
-    display: inline-block;
     color: $text-color;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 14px;
     padding: 2px 0 14px 0;
     vertical-align: top;
+    float: right;
   }
 }
 
