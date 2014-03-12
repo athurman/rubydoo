@@ -184,7 +184,7 @@ h1, h2, h3, h4, h5, h6, p, a{
   width: 100%;
   height: 20px;
   background-color: $dark-grey;
-  margin-top: 75px;
+  margin-top: 25px;
   #progress {
     height: 20px;
     float: left;
@@ -200,7 +200,7 @@ h1, h2, h3, h4, h5, h6, p, a{
     padding-left: 0;
   }
   .small-1 {
-    padding-right: 5px;
+    padding-right: 8px;
   }
   label {
     color: $text-color;
@@ -290,6 +290,9 @@ input[type="text"].hidden {
 }
 
 @media all and (min-width: 768px){
+  #progress-bar-container {
+    margin-top: 75px;
+  }
   .breeds-find {
     .small-1 {
       padding-right: 0.9375em;
