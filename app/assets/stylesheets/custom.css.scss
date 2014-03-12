@@ -199,6 +199,10 @@ h1, h2, h3, h4, h5, h6, p, a{
   .small-11 {
     padding-left: 0;
   }
+  .small-1 {
+    padding-right: 0;
+    width: 5.33333%;
+  }
   label {
     color: $text-color;
     font-family: 'Source Sans Pro', sans-serif;
@@ -288,6 +292,10 @@ input[type="text"].hidden {
 
 @media all and (min-width: 768px){
   .breeds-find {
+    .small-1 {
+      padding-right: 0.9375em;
+      width: 8.33333%;
+    }
     label {
       font-size: 20px;
       float: left;
