@@ -22,7 +22,7 @@
                 %p= "Primary Role: #{breed.role}"
                 %p Temperament:
                 %p.temperament= breed.temperament
-                = link_to "Search for #{breed.name}s in a shelter near you", static_pages_breed_form_path(breed_param: breed.name), data: {:'reveal-id' => "shelterModal", :'reveal-ajax' => 'true'}, class: "search-breeds"
+                = link_to "Search for #{breed.name}s in a shelter near you", static_pages_breed_form_path(breed_param: breed.name), data: {:'reveal-id' => "shelterModal", :'reveal-ajax' => 'true'}, class: "search-breeds button"
                 .rating.hidden= rating +=1
             .row
               .small-12.columns

@@ -279,6 +279,9 @@ h1, h2, h3, h4, h5, h6, p, a{
       color: $ice-blue;
       font-weight: 400;
     }
+    a {
+      margin-top: 20px;
+    }
     .search-breeds {
       float: right;
     }

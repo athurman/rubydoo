@@ -8,11 +8,11 @@
             .large-4.small-12.columns
               %img.dog-image(src="#{dog["image"]}")
               %p For more information please contact:
-              %p= dog["contact_name"]
-              %p= "Phone: #{dog["contact_phone"]}"
+              %p= dog["contact_name"] unless dog["contact_name"].nil?
+              %p= "Phone: #{dog["contact_phone"]}" unless dog["contact_phone"].nil?
               %p
-                Email:
-                = mail_to dog["email"]
+                = "Email: " unless dog["email"].nil?
+                = mail_to dog["email"] unless dog["email"].nil?
             .large-8.small-12.columns
               .shelter-dog
                 %h5= "Name: #{dog["name"]}"
