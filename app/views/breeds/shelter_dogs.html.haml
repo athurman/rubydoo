@@ -6,7 +6,10 @@
         - @shelterdogs.each do |dog|
           .row
             .large-4.small-12.columns.pet
-              %img.dog-image(src="#{dog["image"]}")
+              - if dog["image"]
+                %img.dog-image(src="#{dog["image"]}")
+              - else
+                %img.dog-image(src="/images/breeds/not-found.png")
               %p For more information please contact:
               %p= dog["contact_name"] unless dog["contact_name"].nil?
               %p= "Phone: #{dog["contact_phone"]}" unless dog["contact_phone"].nil?
