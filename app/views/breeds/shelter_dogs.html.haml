@@ -5,7 +5,7 @@
       - if @shelterdogs.length >= 1
         - @shelterdogs.each do |dog|
           .row
-            .large-4.small-12.columns
+            .large-4.small-12.columns.pet
               %img.dog-image(src="#{dog["image"]}")
               %p For more information please contact:
               %p= dog["contact_name"] unless dog["contact_name"].nil?
