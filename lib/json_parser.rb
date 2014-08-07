@@ -71,7 +71,8 @@ class JsonParser
 
         shelter_dog["description"] = pet_obj["description"]["$t"]
         unless pet_obj["media"]["photos"].nil?
-          shelter_dog["image"] = pet_obj["media"]["photos"]["photo"].first["$t"]
+          dog_image = pet_obj["media"]["photos"]["photo"].first["$t"].split("&")
+          shelter_dog["image"] = dog_image[0] << "&width=500&-x.jpg"
         end
         shelter_dog["breeds"] = []
         if pet_obj["breeds"]["breed"].is_a?(Array)
@@ -97,7 +98,8 @@ class JsonParser
       shelter_dog["contact_phone"] = parsed["petfinder"]["pets"]["pet"]["contact"]["phone"]["$t"] unless parsed["petfinder"]["pets"]["pet"]["contact"]["phone"].nil?
       shelter_dog["description"] = parsed["petfinder"]["pets"]["pet"]["description"]["$t"]
       unless parsed["petfinder"]["pets"]["pet"]["media"]["photos"].nil?
-        shelter_dog["image"] = parsed["petfinder"]["pets"]["pet"]["media"]["photos"]["photo"].first["$t"]
+        dog_image = parsed["petfinder"]["pets"]["pet"]["media"]["photos"]["photo"].first["$t"].split("&")
+        shelter_dog["image"] = dog_image[0] << "&width=500&-x.jpg"
       end
       shelter_dog["breeds"] = []
       if parsed["petfinder"]["pets"]["pet"]["breeds"]["breed"].is_a?(Array)
